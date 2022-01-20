@@ -17,18 +17,18 @@ Average order value: 3145.128 <br />
 Therefore, the error in calculating total items results in error. Instead of summing the value of items, count was used. <br />
 
 b.What metric would you report for this dataset? <br />
-Answer: <br />
+<b>Answer:</b> <br />
 To correctly calculate AOV (average order value) we need to divide the total revenue in the time period with the total number of items sold. That is, AOV = total revenue/total items. <br />
 
 c.What is its value? <br />
-Answer: <br />
+<b>Answer:</b> <br />
 The correct value is 357.92 <br />
 
 
 Question 2: For this question you’ll need to use SQL. Follow this link to access the data set required for the challenge. Please use queries to answer the following questions. Paste your queries along with your final numerical answers below. <br />
 
 a.How many orders were shipped by Speedy Express in total? <br />
-
+<b>Query:</b> <br />
 CREATE VIEW orders_shipped AS <br />
 SELECT Orders.OrderID, Orders.ShipperID, Shippers.ShipperName <br />
 FROM Orders  <br />
@@ -37,10 +37,11 @@ ON Shippers.ShipperID=Orders.ShipperID; <br />
 SELECT COUNT(*) FROM [orders_shipped] <br />
 WHERE ShipperName = 'Speedy Express'; <br />
 
-Answer= 54 <br />
+<b>Answer:</b>= 54 <br />
 
 
 b.	What is the last name of the employee with the most orders? <br />
+<b>Query:</b> <br />
 CREATE VIEW Employee_Orders AS  <br />
 SELECT Orders.EmployeeID, Employees.LastName, Orders.OrderID <br />
 FROM Orders <br />
@@ -52,8 +53,9 @@ FROM Employee_Orders <br />
 GROUP BY LastName <br />
 ORDER BY COUNT(*) desc; <br />
 
-Answer = Peacock, 40 <br />
+<b>Answer:</b>= Peacock, 40 <br />
 c.	What product was ordered the most by customers in Germany? <br />
+<b>Query:</b> <br />
 CREATE VIEW Products_Ordered AS <br />
 SELECT Orders.OrderID, Customers.Country, OrderDetails.Quantity, Products.ProductName <br />
 FROM Orders, OrderDetails <br />
@@ -70,7 +72,7 @@ SELECT ProductName, Quantity, Orders, (Quantity * Orders) AS TotalOrdered <br />
 FROM Product_Orders <br />
 ORDER BY TotalOrdered desc <br />
 LIMIT 1; <br />
-Answer: <br />
+<b>Answer:</b> <br />
 ProductName: Camembert Pierrot <br />
 Quantity: 40 <br />
 Orders: 300 <br />
