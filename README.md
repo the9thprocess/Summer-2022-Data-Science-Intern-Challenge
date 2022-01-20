@@ -9,25 +9,25 @@ Question 1: Given some sample data, write a program to answer the following: cli
 
 On Shopify, we have exactly 100 sneaker shops, and each of these shops sells only one model of shoe. We want to do some analysis of the average order value (AOV). When we look at orders data over a 30 day window, we naively calculate an AOV of $3145.13. Given that we know these shops are selling sneakers, a relatively affordable item, something seems wrong with our analysis. 
 
-a.	Think about what could be going wrong with our calculation. Think about a better way to evaluate this data. 
+a.Think about what could be going wrong with our calculation. Think about a better way to evaluate this data. 
 Answer:
 Total revenue generated: 15725640
 Count of items: 5000
 Average order value: 3145.128
 Therefore, the error in calculating total items results in error. Instead of summing the value of items, count was used.
 
-b.	What metric would you report for this dataset?
+b.What metric would you report for this dataset?
 Answer:
 To correctly calculate AOV (average order value) we need to divide the total revenue in the time period with the total number of items sold. That is, AOV = total revenue/total items.
 
-c.	What is its value?
+c.What is its value?
 Answer:
-		The correct value is 357.92
+The correct value is 357.92
 
 
 Question 2: For this question you’ll need to use SQL. Follow this link to access the data set required for the challenge. Please use queries to answer the following questions. Paste your queries along with your final numerical answers below.
 
-a.	How many orders were shipped by Speedy Express in total?
+a.How many orders were shipped by Speedy Express in total?
 
 CREATE VIEW orders_shipped AS
 SELECT Orders.OrderID, Orders.ShipperID, Shippers.ShipperName
